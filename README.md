@@ -34,8 +34,8 @@ The architecture for multi-step forecast, applied for missing data
 imputation, has been altered from the tutorial by Brownlee (2020).
 
 The original owner of the data and code used
-in this thesis retains ownership of the data and code during and after
-the completion of this thesis.
+in this thesis retains ownership of the data and code.
+
 
 Brownlee, J. (2020). Multi-step time series forecasting with machine learning
 for electricity usage. https://machinelearningmastery.com/multi-step-time-series-forecasting-with-machine-learningmodels-for-household-electricity-consumption/
