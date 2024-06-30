@@ -38,5 +38,4 @@ in this thesis retains ownership of the data and code during and after
 the completion of this thesis.
 
 Brownlee, J. (2020). Multi-step time series forecasting with machine learning
-for electricity usage. https://machinelearningmastery.com/
-multi- step- time- series- forecasting-with-machine-learningmodels-for-household-electricity-consumption/
+for electricity usage. https://machinelearningmastery.com/multi-step-time-series-forecasting-with-machine-learningmodels-for-household-electricity-consumption/
