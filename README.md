@@ -10,9 +10,9 @@ The data is provided by the Deutscher Wetterdienst (German Weather Service).
 Structure of the repository:
 1. datasets:  hourly measurements of X meteorological characteristic for Berlin 2023, w/ and without imputation
 2. utilities: required functions
-3. EMDA.py: Exploratory missing data analysis 
-4. imputation.py: imputation based upon EDA results
-5. LSTM_results.py: comparison of different imputation techniques
+3. EMDA.ipynb: Exploratory missing data analysis 
+4. imputation.ipynb: imputation based upon EDA results
+5. LSTM_results.ipynb: comparison of different imputation techniques
  
 Datasource:
 
@@ -38,5 +38,5 @@ in this thesis retains ownership of the data and code during and after
 the completion of this thesis.
 
 Brownlee, J. (2020). Multi-step time series forecasting with machine learning
-for electricity usage. https://machinelearningmastery. com/
+for electricity usage. https://machinelearningmastery.com/
 multi- step- time- series- forecasting-with-machine-learningmodels-for-household-electricity-consumption/
