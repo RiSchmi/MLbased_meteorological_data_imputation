@@ -1,0 +1,5 @@
+pandas==1.5.3 # EMDA
+matplotlib==3.7.1 # EMDA
+seaborn==0.12.2 # EMDA
+keras==2.12.0 # lstm imputation
+tensorflow==2.16.2 # lstm imputation
