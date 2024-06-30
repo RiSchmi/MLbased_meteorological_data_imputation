@@ -19,3 +19,16 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+
+Datasource:
+
+The usage of the meteorological data is regulated by the "Creative Commons BY 4.0" (CC BY 4.0) and covers the following data sets:
+
+• Hourly station observations of 2 m air temperature and humidity for Germany, Version v24.03 • Hourly station observations of precipitation for Germany, Version v24.03 • Hourly station observations of pressure for Germany, Version v24.03 • Hourly station observations of solar incoming (total/diffuse) and longwave downward radiation for Germany, Version v24.03 • Hourly mean value from station observations of wind speed and wind direction for Germany, Version v24.03
+
+Ackknowledgement: The architecture for multi-step forecast, applied for missing data imputation, has been altered from the tutorial by Brownlee (2020).
+
+The original owner of the data and code used in this thesis retains ownership of the data and code during and after the completion of this thesis.
+
+Brownlee, J. (2020). Multi-step time series forecasting with machine learning for electricity usage. https://machinelearningmastery.com/multi-step-time-series-forecasting-with-machine-learningmodels-for-household-electricity-consumption/
