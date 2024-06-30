@@ -1,6 +1,7 @@
 # the subsequent code is adapted from the implimention by Brownlee, J. (2020). Multi-step time series forecasting with machine learning for electricity usage. (see readme)
 from keras import Sequential, Input
-from keras.layers import LSTM, Dense
+from keras.layers import LSTM, Dense, RepeatVector, TimeDistributed, Flatten, Conv1D, MaxPooling1D
+import numpy as np
 import numpy as np
 
 # function to reshape 
@@ -55,11 +56,39 @@ class LSTM_model():
 		model.fit(x = train_x, y= train_y, epochs= 5, batch_size= 32, verbose= 0, validation_split= 0.2)
 		return model
 
+	def build_model_cnn_lstm(self, train):
+		# prepare data
+		train_x, train_y = self.to_supervised(train, n_out= self.timesteps)
+		# define parameters
+		n_timesteps, n_features, n_outputs = train_x.shape[1], train_x.shape[2], train_y.shape[1]
+		# reshape output into [samples, timesteps, features]
+		train_y = train_y.reshape((train_y.shape[0], train_y.shape[1], 1))
+		# define model
+		model = Sequential()
+		model.add(Input(shape=(n_timesteps, n_features)))
+		model.add(Conv1D(filters=64, kernel_size=3, activation='relu'))
+		model.add(Conv1D(filters=128, kernel_size=3, activation='relu'))
+		model.add(MaxPooling1D(pool_size=2))
+		model.add(Flatten())
+		model.add(RepeatVector(n_outputs))
+		model.add(LSTM(200, activation='relu', return_sequences=True))
+		model.add(TimeDistributed(Dense(100, activation='relu')))
+		model.add(TimeDistributed(Dense(1)))
+		model.compile(loss='mae', optimizer='adam')
+		# fit network
+		model.fit(train_x, train_y, verbose = 0, epochs= 10, batch_size= 32, validation_split= 0.2)
+		return model
 
 	def train_uni_LSTM(self, feature):
 		train = self.reshape_data(self.df[feature].values)
 		model = self.build_model_lstm(train)
 		print(f'finish training lstm for {feature}')
+		return model
+      
+	def train_uni_CNN_LSTM(self, feature):
+		train = self.reshape_data(self.df[feature].values)
+		model = self.build_model_cnn_lstm(train)
+		print(f'finish training cnn-lstm for {feature}')
 		return model
 
 class lstm_impute():
